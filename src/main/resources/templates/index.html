@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<p></p>
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Fonction</th>
+            <th>Salaire</th>
+        </tr>
+        <tr th:each="emp:${employees}">
+            <td>[[${emp.id}]]</td>
+            <td>[[${emp.name}]]</td>
+            <td>[[${emp.fonction}]]</td>
+            <td>[[${emp.salaire}]]</td>
+            <td><a th:href="@{/edit/{id}(id=${emp.id})}">Edit</a></td>
+            <td><a th:href="@{/delete/{id}(id=${emp.id})}">Delete</a></td>
+
+        </tr>
+
+    </table>
+    <p><a href="/add" class="btn btn-primary">Ajouter un nouvel employé</a></p>
+</div>
+</body>
+</html>
+
+
+

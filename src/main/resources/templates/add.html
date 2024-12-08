@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<p></p>
+<div class="container">
+    <form action="#" th:action="@{/create}" th:object="${emp}" method="post">
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" id="name" placeholder="Name">
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+
+        <label for="fonction">Fonction</label>
+        <input type="text" th:field="*{fonction}" id="fonction" placeholder="Fonction">
+        <span th:if="${#fields.hasErrors('fonction')}" th:errors="*{fonction}"></span>
+
+        <label for="salaire">Salaire</label>
+        <input type="text" th:field="*{salaire}" id="salaire" placeholder="Salaire">
+        <span th:if="${#fields.hasErrors('salaire')}" th:errors="*{salaire}"></span>
+
+        <input type="submit" value="Ajouter" class="btn btn-primary">
+    </form>
+</div>
+</body>
+</html>
+
+
+
